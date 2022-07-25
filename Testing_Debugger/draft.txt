@@ -1,0 +1,5 @@
+cd /usr/bin/
+
+google-chrome
+-remote-debugging-port=9222
+-user-data= cd Desktop/Debugger/
