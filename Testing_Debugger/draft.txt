@@ -1,5 +1,65 @@
 cd /usr/bin/
 
-google-chrome
+where do you store the user's data? /Desktop/Debugger
+how do you direct/designate where the user data is stored? -user-data=/Desktop/Debugger
+how do you choose the application to be used? google-chrome
+how will you assign a debugging port for the selected application? -remote-debugging-port=9222
+
+
+9222 is the remote debugging port number, so in order to let python know which port is to be used, you need to designate a port for this purpose by
 -remote-debugging-port=9222
--user-data= cd Desktop/Debugger/
+and you will need to tell python, hey can you please use google-chrome as the remote-debugging browser and we will assign port 9222 for its use, all
+data of the user will be stored in the following folder: /Desktop/Debugger
+
+so how will you tell python all in one sentence?
+
+google-chrome -remote-debugging-port=9222 -user-data=/Desktop/Debugger/
+****************************************************************************************************************************************************
+
+
+# Page Scrolling:
+
+# document_height = browser.execute_script('return document.body.scrollHeight')
+#
+# scrolling_speed = 5
+
+# execute scroll
+
+
+# execute scroll back up
+
+# n = 0
+# while n < 5:
+#     for scroll in range(0, document_height, scrolling_speed):
+#         browser.execute_script(f'window.scrollTo(0, {scroll})')
+#         sleep(.1)
+#         print(scroll)
+#
+#     browser.execute_script(f'window.scrollTo({document_height},0)')
+#     n += 1
+
+
+# 1 Scroll by pixels
+# browser.execute_script('window.scrollBy(0,1500);')
+
+# 2 Scroll to target element
+# target_elements = browser.find_elements(By.XPATH, '//a[@class="elementor-button-link elementor-button elementor-size-sm"]')
+# target_element = target_elements[-1]
+# print(target_element)
+# browser.execute_script('arguments[0].scrollIntoView;', target_element)
+
+# 3 Scroll to end of page
+# browser.execute_script('window.scrollBy(0,document.body.scrollHeight)')
+
+# 4 Scroll Slowly
+# speed = 50 # the more the faster, in integer
+#
+# height = browser.execute_script("return document.body.scrollHeight")
+# print(f'Page height: {height}')
+#
+# for scroll in range(100, height, speed):
+#     browser.execute_script(f"window.scrollTo(0,{scroll})")
+#     sleep(0.1)
+#     print(f'{scroll} / {height}')
+
+****************************************************************************************************************************************************
